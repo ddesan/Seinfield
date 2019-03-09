@@ -1,0 +1,19 @@
+body{
+    background-color: blue;
+}
+h1{
+    color: antiquewhite;
+}
+.img {
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.imgSm{
+    width: 100%;
+    margin: 0 auto;
+}
+#tablero{
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
