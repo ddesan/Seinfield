@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+        <div class="media">
+        
+            <img src="/assets/images/Seinfield.png" class="mr-3" alt="...">
+        
+        </div>
+
+    <div class="container align-center">
+        <div class="row">
+
+            <div class="col-lg-6">
+                <img src="/assets/images/seinfield2.jpeg" alt="">
+            </div>
+
+            <div class="col-lg-6">
+                    <h1 class="text-center">Press any key to get starter!</h1>
+                    <div>Wins:<strong id="numWins"></strong></div>
+                    <div>Current Word</div>
+                    <div><span id="answer"></span></div>
+                    <br>
+                    <div>Number of guesses remaining:</div>
+                    <div id="numGuess">9</div>
+                    <div>Letters already guessed</div>
+                    <div id="lettGuess">0</div>
+            </div>
+           
+        </div>
+    </div>
+                
+
+  <script type="text/javascript">
+
+  //Define word to be guess by user
+
+  var hiddenWordArr = ["cosmo", "seinfield", "elaine", "george", "newman"];
+
+  var hiddenWord = hiddenWordArr[Math.floor(Math.random() * hiddenWordArr.length)];
+
+  var answerArray = [ ];
+
+  var countR = 1;
+
+  var countG = 0;
+
+  //Define the underscores from the hidden word
+
+  for (var i = 0; i < hiddenWord.length; i ++){
+      
+      answerArray[i] = "_";
+
+  }
+
+  //Input the underscore lenght to the html
+
+  document.getElementById("answer").innerHTML = answerArray;
+
+  console.log(answerArray[i]);
+
+  //Start the game with the input from the user
+
+  document.onkeyup = function(event) {
+
+    //Storage the selection of the user on a variable
+
+        var userGuess = event.key;
+
+        console.log(userGuess);
+
+    //Run a loop for each letter of the variable in the array
+
+    for (var i = 0; i < hiddenWord.length; i++){
+
+    //Verify if the letter guesses by the user is the same as the hidden word
+
+            if(hiddenWord[i] === userGuess){
+
+                answerArray[i] = userGuess;
+
+                console.log(hiddenWord[i]);
+
+                document.getElementById("answer").innerHTML = answerArray.join(" ");
+
+                countG++;
+
+                document.getElementById("lettGuess").innerHTML = countG;
+
+            } 
+
+            //Message when the number of counts reach 9
+
+            else {
+
+                document.getElementById("numGuess").innerHTML = 9 - countR;
+
+            };
+        };
+    }
+
+  </script>
+    
+</body>
+</html>
