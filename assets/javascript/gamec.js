@@ -23,7 +23,7 @@ console.log(hiddenWord);
 ///Define the underscores from the hidden word to get the layout
 
     for (var i = 0; i < hiddenWord.length; i ++){
-        
+
         answerString += "_ ";
 
         answerArray.push(" ");
@@ -34,7 +34,7 @@ console.log(hiddenWord);
 
     console.log(answerString);
 
-    document.getElementById("answer").innerHTML = answerString;
+    document.getElementById('answer').innerHTML = answerString;
 
 ///Start the game with the input from the user and storage the selection of the user on a variable
 
@@ -52,7 +52,7 @@ document.onkeyup = function(event) {
 
             answerArray[i] = userGuess;
 
-            document.getElementById("answer").innerHTML = answerArray;
+            document.getElementById("answer").innerHTML = answerString.join(" ");
 
         }
 
